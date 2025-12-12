@@ -1,0 +1,1853 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    --primary-color: #ff8c00; /* Laranja forte para ação */
+    --primary-hover: #e07b00; /* Laranja mais escuro para hover */
+    --text-dark: #1a1a1a;
+    --text-gray: #4a4a4a;
+    --bg-light: #f9f9f9; /* Fundo off-white/bege claro */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    min-height: 100vh; /* Ocupa a altura total da tela */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    padding: 60px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f4f4f4 100%);
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Permite quebrar linha no mobile */
+}
+
+/* --- COLUNA ESQUERDA (TEXTO) --- */
+.hero-content {
+    flex: 1;
+    min-width: 300px; /* Garante largura mínima */
+}
+
+.headline {
+    font-family: var(--font-heading);
+    font-weight: 800; /* Extra bold */
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.sub-h1 {
+    display: block;
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-top: 10px;
+    color: #333;
+}
+
+.subheadline {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    margin-bottom: 25px;
+    max-width: 90%;
+}
+
+/* --- SELOS E AUTORIDADE --- */
+.trust-badges {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    font-size: 0.9rem;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    font-weight: 600;
+}
+
+.authority-text {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 30px;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 10px;
+}
+
+/* --- BOTÃO CTA --- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 18px 35px;
+    border-radius: 50px; /* Arredondado */
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+
+.cta-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px); /* Efeito de elevação */
+}
+
+.hero-footer {
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- COLUNA DIREITA (IMAGEM) --- */
+.hero-image-wrapper {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 10px;
+    /* Sombreamento suave para destacar do fundo */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+    object-fit: cover;
+}
+
+.img-caption {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* --- RESPONSIVIDADE (CELULAR) --- */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0;
+        text-align: center; /* Centraliza tudo no celular */
+    }
+
+    .hero-container {
+        flex-direction: column-reverse; /* Imagem em cima ou embaixo? Aqui coloquei texto em cima, imagem embaixo. Se quiser imagem primeiro, use 'column' */
+    }
+
+    .headline {
+        font-size: 2rem;
+    }
+
+    .sub-h1 {
+        font-size: 1.4rem;
+    }
+
+    .subheadline {
+        margin: 0 auto 25px auto; /* Centraliza o texto */
+    }
+
+    .trust-badges {
+        justify-content: center;
+    }
+    
+    .authority-text {
+        border-left: none; /* Remove a barra lateral no mobile */
+        border-top: 3px solid var(--primary-color); /* Coloca em cima */
+        padding-top: 10px;
+        padding-left: 0;
+    }
+}
+
+/* --- SEÇÃO 2: PARA QUEM É? --- */
+.section-who {
+    background-color: #ffffff; /* Fundo Branco Limpo */
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.highlight-text {
+    color: #006400; /* Verde escuro para remeter a dinheiro/lucro */
+    font-weight: 700;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+}
+
+/* Layout Flex: Imagem Esq | Lista Dir */
+.who-content {
+    display: flex;
+    align-items: flex-start; /* Alinha no topo */
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+/* Imagem */
+.who-image-box {
+    flex: 1;
+    text-align: center;
+}
+
+.who-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+.img-caption-box {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #555;
+    background: #f0f8ff; /* Azulzinho muito claro */
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Lista de Dores */
+.pain-list {
+    flex: 1.2; /* A lista ocupa um pouco mais de espaço que a foto */
+    list-style: none;
+}
+
+.pain-list li {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    color: #333;
+    font-weight: 500;
+}
+
+.check-icon {
+    margin-right: 12px;
+    font-size: 1.2rem;
+    /* Se quiser usar cor via CSS ao invés do emoji direto, pode manipular aqui */
+}
+
+/* Bloco de Identificação Profunda */
+.deep-identification {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.deep-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.mini-cta {
+    font-weight: 600;
+    color: var(--primary-color); /* Laranja da marca */
+    font-size: 1.1rem;
+}
+
+/* --- RESPONSIVIDADE SEÇÃO 2 --- */
+@media (max-width: 768px) {
+    .who-content {
+        flex-direction: column; /* Empilha foto e lista */
+    }
+
+    .who-image-box {
+        order: 2; /* Joga a foto para baixo da lista no celular (opcional) */
+        margin-top: 30px;
+    }
+    
+    .pain-list {
+        order: 1;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* --- SEÇÃO 3: O DIAGNÓSTICO (ATUALIZADO) --- */
+.section-pain {
+    background-color: #f0f0f0; /* Cinza claro neutro */
+    padding: 80px 0;
+    color: #1a1a1a;
+}
+
+/* Centralizar cabeçalho */
+.pain-header.centered {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.pain-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.pain-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* --- NOVO GRID DE DORES --- */
+.pain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Colunas iguais */
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+}
+
+.pain-block {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 5px solid #cc0000; /* Vermelho alerta */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.pain-block:hover {
+    transform: translateY(-3px); /* Leve movimento ao passar o mouse */
+}
+
+/* Item 7 ocupa a largura total para fechar bonito */
+.pain-block.full-width {
+    grid-column: span 2; 
+    text-align: center;
+}
+
+.pain-name {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #cc0000;
+    margin-bottom: 12px;
+}
+
+.pain-block p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* --- CLÍMAX E CTA --- */
+.pain-climax {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #1a1a1a; /* Preto */
+    color: #fff;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.climax-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+}
+
+.highlight-red {
+    color: #ff4d4d; /* Vermelho claro */
+    display: block;
+    margin-top: 10px;
+}
+
+.pain-footer-cta {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.link-next {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- RESPONSIVIDADE (Celular) --- */
+@media (max-width: 768px) {
+    .pain-grid {
+        grid-template-columns: 1fr; /* 1 Coluna no celular */
+    }
+    
+    .pain-block.full-width {
+        grid-column: span 1; /* Volta a ocupar 1 coluna só */
+        text-align: left;
+    }
+
+    .pain-title {
+        font-size: 1.8rem;
+    }
+
+    .pain-climax {
+        padding: 25px;
+    }
+    
+    .climax-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- SEÇÃO 4: A TRANSFORMAÇÃO --- */
+.section-transformation {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.trans-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+/* GRID DE COMPARAÇÃO */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Colunas iguais */
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.compare-box {
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+}
+
+/* Estilo ANTES (Ruim) */
+.box-before {
+    background-color: #fff5f5; /* Vermelho muito claro */
+    border-color: #ffcccc;
+}
+
+.title-bad {
+    color: #cc0000;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+    border-bottom: 1px solid #ffcccc;
+    padding-bottom: 10px;
+}
+
+.list-bad li {
+    list-style: none;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Estilo DEPOIS (Bom) */
+.box-after {
+    background-color: #f0fff4; /* Verde muito claro */
+    border-color: #ccffcc;
+    box-shadow: 0 10px 30px rgba(0,255,0,0.05); /* Leve brilho verde */
+}
+
+.title-good {
+    color: #006400; /* Verde escuro */
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+    border-bottom: 1px solid #ccffcc;
+    padding-bottom: 10px;
+}
+
+.list-good li {
+    list-style: none;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+    font-weight: 600; /* Texto um pouco mais forte no lado bom */
+    font-size: 0.95rem;
+}
+
+/* Ponte Emocional */
+.emotional-bridge {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- CASE STUDY (Tales Coelho) --- */
+.case-study-wrapper {
+    margin-bottom: 60px;
+}
+
+.case-card {
+    display: flex;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Sombra forte para destacar */
+    border: 1px solid #eee;
+}
+
+.case-content {
+    flex: 1.2;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.case-tag {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-self: flex-start;
+    margin-bottom: 15px;
+}
+
+.case-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.case-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.case-list {
+    margin-bottom: 25px;
+}
+
+.case-list li {
+    list-style: none;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.case-quote {
+    background: #f9f9f9;
+    padding: 15px;
+    border-left: 4px solid var(--primary-color);
+    font-style: italic;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Imagem do Case */
+.case-image-box {
+    flex: 1;
+    min-height: 300px;
+}
+
+.case-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto preencha o espaço sem distorcer */
+}
+
+/* Micro Depoimentos */
+.micro-testimonials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.micro-item {
+    background: #fdfdfd;
+    padding: 15px 25px;
+    border-radius: 50px;
+    border: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #555;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.micro-author {
+    font-weight: 700;
+    color: #000;
+    margin-left: 5px;
+}
+
+.trans-footer {
+    text-align: center;
+}
+
+/* --- RESPONSIVIDADE SEÇÃO 4 --- */
+@media (max-width: 768px) {
+    .comparison-grid {
+        grid-template-columns: 1fr; /* Empilha Antes e Depois */
+    }
+
+    .case-card {
+        flex-direction: column-reverse; /* Foto em cima, texto embaixo (ou vice versa) */
+    }
+
+    .case-image-box {
+        height: 250px; /* Altura fixa para foto no mobile */
+    }
+    
+    .case-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    .micro-testimonials {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+/* Mantenha o CSS anterior da Section 4 e adicione/substitua por este bloco abaixo */
+
+/* --- AJUSTES VISUAIS GERAIS --- */
+.highlight-green {
+    background-color: #e6fffa;
+    color: #006400;
+    padding: 2px 5px;
+    font-weight: 800;
+}
+
+/* --- ESTILOS DOS NOVOS CASES (SECUNDÁRIOS) --- */
+.extra-cases-title {
+    text-align: center;
+    margin: 60px 0 30px 0;
+}
+
+.extra-cases-title h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.secondary-cases-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Lado a Lado */
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.secondary-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.sec-card-header {
+    background: #f8f9fa;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.sec-card-header h4 {
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.sec-stat {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.sec-card-body {
+    padding: 20px;
+    flex: 1;
+}
+
+.mini-list {
+    margin-bottom: 15px;
+}
+
+.mini-list li {
+    list-style: none;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.sec-note {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+/* Imagem Weris */
+.sec-card-img {
+    height: 250px;
+    overflow: hidden;
+}
+
+.full-width-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Galeria de Prints (Marmitaria) */
+.print-intro {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: #555;
+    font-weight: 600;
+}
+
+.prints-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.print-item {
+    flex: 1;
+    text-align: center;
+}
+
+.print-item img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.print-item img:hover {
+    transform: scale(1.5); /* Zoom ao passar o mouse */
+    z-index: 10;
+    position: relative;
+    cursor: zoom-in;
+}
+
+.print-item span {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .secondary-cases-grid {
+        grid-template-columns: 1fr; /* Um em cima do outro no celular */
+    }
+
+    .print-item img:hover {
+        transform: none; /* Desativa zoom no celular para não quebrar layout */
+    }
+}
+
+/* --- SEÇÃO 5: O QUE ESTÁ INCLUÍDO --- */
+.section-deliverables {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+}
+
+.deliverables-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+/* GRID DOS 6 PILARES */
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Colunas no PC */
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.pillar-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px 25px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.pillar-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.pillar-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    background: #fff0db; /* Fundo laranja bem claro */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.pillar-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.pillar-desc {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.pillar-list {
+    margin-bottom: 25px;
+    flex: 1; /* Empurra o resultado para o fundo do card */
+}
+
+.pillar-list li {
+    list-style: none;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #333;
+    padding-left: 15px;
+    position: relative;
+}
+
+.pillar-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.pillar-result {
+    background: #f0f8ff; /* Azulzinho claro */
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #004d40;
+    border-left: 3px solid #004d40;
+}
+
+/* RESUMO MENTAL (DE -> PARA) */
+.mindset-shift {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+.mindset-title {
+    font-family: var(--font-heading);
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.mindset-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.mindset-item {
+    text-align: left;
+}
+
+.mindset-item p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.mindset-item.bad p { color: #cc0000; font-weight: 500; }
+.mindset-item.good p { color: #006400; font-weight: 700; }
+
+.arrow-icon {
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.deliverables-footer {
+    text-align: center;
+    font-weight: 600;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+    .pillars-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas no tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .pillars-grid {
+        grid-template-columns: 1fr; /* 1 coluna no celular */
+    }
+    
+    .mindset-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .arrow-icon {
+        transform: rotate(90deg); /* Seta aponta pra baixo no celular */
+    }
+    
+    .mindset-item {
+        text-align: center;
+    }
+}
+
+/* --- SEÇÃO 6: PREÇO E INVESTIMENTO (FINAL) --- */
+.section-pricing {
+    background: linear-gradient(to bottom, #f9f9f9 0%, #fff 100%);
+    padding: 80px 0;
+}
+
+.pricing-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+/* CONTAINER VERTICAL */
+.pricing-comparison-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+
+/* 1. CARD DE MERCADO (DETALHADO) */
+.market-price-card {
+    background: #fff;
+    padding: 30px 40px;
+    width: 100%;
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+}
+
+.market-price-card h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    background: #eee;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 4px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.price-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.price-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinha o preço com o texto */
+    margin-bottom: 15px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 8px;
+}
+
+/* Novo estilo para descrição + matemática */
+.price-desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-desc span:first-child {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.price-math {
+    font-size: 0.85rem;
+    color: #777; /* Cinza para a conta matemática */
+    font-style: italic;
+}
+
+.price-value {
+    font-weight: 700;
+    color: #000;
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+
+.market-total {
+    margin-top: 25px;
+    text-align: center;
+    background: #fdfdfd;
+    padding: 15px;
+    border: 1px solid #eee;
+}
+
+.total-label {
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.total-value.strike {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #cc0000;
+    text-decoration: line-through;
+}
+
+/* 2. CARD DO ACELERADOR */
+.accelerator-offer-card {
+    background: #fff;
+    padding: 50px 40px;
+    border-radius: 15px;
+    width: 100%;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15); 
+    position: relative;
+    text-align: center;
+    transform: scale(1.05);
+}
+
+.offer-tag {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.accelerator-offer-card h3 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.offer-desc {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.not-price {
+    color: #cc0000;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.final-price-box {
+    margin: 25px auto;
+    background: #fff9f0;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px dashed var(--primary-color);
+    max-width: 400px;
+}
+
+.prefix {
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.big-price {
+    display: block;
+    font-size: 3.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.payment-terms {
+    display: block;
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.value-logic {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: #444;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-whatsapp {
+    display: block;
+    background: #25D366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.cta-whatsapp:hover {
+    background: #1ebc57;
+    transform: translateY(-4px);
+}
+
+.limit-warning {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* --- BLOCO FINAL (Arrumando o texto solto) --- */
+.cost-of-inaction-box {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0; /* Borda suave para delimitar */
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03); /* Sombra leve */
+}
+
+.inaction-title {
+    font-family: var(--font-heading);
+    color: #1a1a1a;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.inaction-text {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.steps-wrapper {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block; /* Fica do tamanho do conteúdo */
+    width: 100%;
+    max-width: 600px;
+}
+
+.steps-wrapper h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.steps-list {
+    list-style: none; /* Tira os números padrão feios */
+    counter-reset: step-counter; /* Cria contador novo */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.steps-list li {
+    position: relative;
+    padding-left: 30px;
+    font-weight: 600;
+    color: #444;
+    text-align: left;
+}
+
+.steps-list li::before {
+    counter-increment: step-counter;
+    content: counter(step-counter);
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 0.8rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 1px;
+}
+
+.steps-note {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .pricing-comparison-wrapper {
+        padding: 0 10px;
+    }
+    
+    .accelerator-offer-card {
+        transform: none;
+        padding: 30px 20px;
+    }
+
+    .steps-list {
+        flex-direction: column; /* Um passo embaixo do outro no celular */
+        align-items: center;
+    }
+}
+
+/* --- SEÇÃO 7: GARANTIA (ALINHAMENTO) --- */
+.section-guarantee {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.guarantee-header {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.highlight-blue {
+    color: #0056b3; /* Azul Forte (Seriedade) */
+    font-weight: 800;
+}
+
+.guarantee-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* Box da Garantia */
+.guarantee-box {
+    border: 2px solid #0056b3; /* Borda Azul */
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+    position: relative;
+    background: #f0f8ff; /* Fundo azul bem clarinho */
+}
+
+.badge-icon {
+    font-size: 3rem;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 0 15px;
+    border-radius: 50px;
+    border: 1px solid #e0e0e0;
+}
+
+.guarantee-box h3 {
+    font-family: var(--font-heading);
+    color: #004494;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.guarantee-intro {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.guarantee-list {
+    text-align: left;
+    max-width: 550px;
+    margin: 0 auto 25px auto;
+    list-style: none;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #dae1e7;
+}
+
+.guarantee-list li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    font-weight: 600;
+    color: #444;
+}
+
+.guarantee-list li::before {
+    content: "✓";
+    color: #2ecc71; /* Check verde */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.guarantee-condition {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #0056b3;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.lock-text {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.protection-note {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Bloco de Realidade */
+.reality-block {
+    background: #f8f9fa;
+    padding: 30px;
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #555;
+    border: 1px solid #e0e0e0;
+}
+
+.reality-block h4 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hard-truth {
+    margin-top: 15px;
+    color: #1a1a1a;
+    background: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px dashed #ccc;
+}
+
+.authority-phrase {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- SEÇÃO 8: CTA FINAL (DARK MODE) --- */
+.section-final-cta {
+    background-color: #111; /* Fundo quase preto */
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.final-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+/* Filtro (Pra quem é / não é) */
+.filter-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.filter-col {
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+}
+
+.filter-col h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.for-you h3 { color: #2ecc71; } /* Verde */
+.not-for-you h3 { color: #e74c3c; } /* Vermelho */
+
+.filter-col ul {
+    list-style: none;
+}
+
+.filter-col li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+}
+
+/* Texto Emocional */
+.final-emotion {
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+.scenarios {
+    margin: 20px 0;
+    background: #222;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.scenarios p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.decision-text {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-top: 20px;
+}
+
+/* Botão Final Gigante */
+.cta-button-large {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.5rem;
+    padding: 25px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.6);
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.cta-button-large:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-hover);
+}
+
+/* Animação de "Pulso" no botão */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 140, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 140, 0, 0); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+.scarcity-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.last-words {
+    margin-top: 60px;
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 300;
+}
+
+.last-words strong {
+    color: var(--primary-color);
+    font-weight: 800;
+    display: block;
+    margin-top: 10px;
+    font-size: 1.8rem;
+}
+
+/* --- FOOTER --- */
+.site-footer {
+    background: #000;
+    color: #555;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    border-top: 1px solid #222;
+}
+
+.footer-note {
+    margin-top: 10px;
+    font-size: 0.75rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .filter-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button-large {
+        width: 100%; /* Botão ocupa largura total no celular */
+        padding: 20px;
+        font-size: 1.2rem;
+    }
+    
+    .last-words strong {
+        font-size: 1.4rem;
+    }
+}
+
+/* --- ESTILOS NOVOS PARA DAR RITMO --- */
+
+/* 1. SEÇÃO SNAPSHOT (O Resumo em 60s) */
+.section-snapshot {
+    background: #1a1a1a; /* Fundo escuro para contraste imediato */
+    padding: 30px 0;
+    color: white;
+    margin-top: -5px; /* Cola no Hero */
+}
+
+.snapshot-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.snap-item {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 10px;
+    border-right: 1px solid #444;
+}
+
+.snap-item:last-child { border-right: none; }
+
+.snap-icon { font-size: 1.5rem; display: block; margin-bottom: 5px; }
+
+.snap-item h4 {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.snap-item p { font-size: 0.85rem; color: #ccc; line-height: 1.3; }
+
+/* 2. AJUSTE DE GRID DE DORES (Compacto) */
+.pain-grid.compact-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 */
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.mid-cta-box { text-align: center; margin-top: 30px; }
+.mid-cta-box .link-next { font-size: 1.2rem; }
+
+/* 3. TRANSFORMAÇÃO & CASES */
+.compare-list li { padding-left: 0; margin-bottom: 5px; font-size: 0.9rem; }
+.compare-box { padding: 20px; }
+
+.secondary-card.compact-case {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #eee;
+    box-shadow: none;
+}
+
+.cta-button.small-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+}
+
+/* 4. PREÇO (Limpeza) */
+.market-price-card { background: #fdfdfd; border: 1px dashed #ccc; padding: 20px; }
+.price-list li { margin-bottom: 8px; font-size: 0.95rem; }
+.accelerator-offer-card { transform: none; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.big-price { font-size: 3rem; }
+
+/* RESPONSIVIDADE PARA O SNAPSHOT */
+@media (max-width: 768px) {
+    .snap-item { border-right: none; border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 10px; }
+    .snap-item:last-child { border-bottom: none; }
+    .pain-grid.compact-grid { grid-template-columns: 1fr; }
+}
+
+/* --- FIX: CASES LADO A LADO (DUAL GRID) --- */
+.cases-dual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide a tela em 2 */
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+}
+
+.case-card-v2 {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Sombra elegante */
+    border: 1px solid #eee;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.case-card-v2:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.case-img-header {
+    height: 220px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #f0f0f0; /* Cor de fundo caso a img demore */
+}
+
+.case-img-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto preencha sem esticar */
+}
+
+.case-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.case-badge.fast { background: #e67e22; } /* Laranja */
+.case-badge.scale { background: #27ae60; } /* Verde */
+
+.case-body {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Alinhado a esquerda fica mais fácil de ler */
+}
+
+.case-body h3 {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.case-main-stat {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.case-desc {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.case-quote {
+    margin-top: auto; /* Empurra pro fundo do card */
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #888;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 10px;
+}
+
+/* COMPARAÇÃO COMPACTA EMBAIXO */
+.comparison-compact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.compare-col {
+    flex: 1;
+    text-align: center;
+}
+
+.compare-col h4 {
+    margin-bottom: 5px;
+    font-weight: 800;
+}
+
+.compare-col p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.compare-arrow {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+/* RESPONSIVIDADE (CELULAR) */
+@media (max-width: 768px) {
+    .cases-dual-grid {
+        grid-template-columns: 1fr; /* Um card embaixo do outro */
+        max-width: 400px; /* Limita largura pra não ficar gigante */
+    }
+
+    .comparison-compact {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .compare-arrow {
+        transform: rotate(0deg); /* Seta pra baixo */
+    }
+}
